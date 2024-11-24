@@ -4,6 +4,7 @@ use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\InfoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +32,5 @@ Route::controller(LoginRegisterController::class)->group(function () {
 
 Route::resource('gallery', GalleryController::class);
 Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+
+Route::get('/info', [InfoController::class, 'index'])->name('info');
